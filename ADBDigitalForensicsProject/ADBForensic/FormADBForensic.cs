@@ -474,5 +474,155 @@ namespace ADBForensic
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnInstalledServicesInfo_Click(object sender, EventArgs e)
+        {
+            var selectedDevice = lbxAvailableDevices.SelectedItem?.ToString();
+
+            if (string.IsNullOrEmpty(selectedDevice))
+            {
+                throw new Exception("Please select device");
+            }
+
+            var exportPath = string.Empty;
+
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                exportPath = folderBrowserDialog.SelectedPath;
+            }
+            else
+            {
+                return;
+            }
+
+            var indexOfEndChar = selectedDevice.IndexOf('\t');
+            var deviceModel = selectedDevice.Substring(0, indexOfEndChar);
+
+            info.FileName = "C:\\platform-tools\\adb.exe";
+            info.Arguments = "-s " + deviceModel + " shell dumpsys ";
+            process.StartInfo = info;
+
+            process.Start();
+
+            txtBoxOutput.Text = string.Empty;
+            txtBoxOutput.Text += process.StandardOutput.ReadToEnd();
+        }
+
+        private void btnBloothothDevicesInfo_Click(object sender, EventArgs e)
+        {
+            var selectedDevice = lbxAvailableDevices.SelectedItem?.ToString();
+
+            if (string.IsNullOrEmpty(selectedDevice))
+            {
+                throw new Exception("Please select device");
+            }
+
+            var exportPath = string.Empty;
+
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                exportPath = folderBrowserDialog.SelectedPath;
+            }
+            else
+            {
+                return;
+            }
+
+            var indexOfEndChar = selectedDevice.IndexOf('\t');
+            var deviceModel = selectedDevice.Substring(0, indexOfEndChar);
+
+            info.FileName = "C:\\platform-tools\\adb.exe";
+            info.Arguments = "-s " + deviceModel + " shell dumpsys bluetooth_manager ";
+            process.StartInfo = info;
+
+            process.Start();
+
+            txtBoxOutput.Text = string.Empty;
+            txtBoxOutput.Text += process.StandardOutput.ReadToEnd();
+        }
+
+        private void btnSMS_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                var selectedDevice = lbxAvailableDevices.SelectedItem?.ToString();
+
+                if (string.IsNullOrEmpty(selectedDevice))
+                {
+                    throw new Exception("Please select device");
+                }
+
+                var exportPath = string.Empty;
+
+                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    exportPath = folderBrowserDialog.SelectedPath;
+                }
+                else
+                {
+                    return;
+                }
+                //adb shell content query --uri content://sms/
+
+                var indexOfEndChar = selectedDevice.IndexOf('\t');
+                var deviceModel = selectedDevice.Substring(0, indexOfEndChar);
+
+                info.FileName = "C:\\platform-tools\\adb.exe";
+                info.Arguments = "-s " + deviceModel + " shell content query --uri content://sms/"; //> C:\\Users\\katar\\Downloads\\fff.txt"; //+ exportPath + "\\ff.txt";
+                process.StartInfo = info;
+
+                process.Start();
+
+                txtBoxOutput.Text = string.Empty;
+                txtBoxOutput.Text += process.StandardOutput.ReadToEnd();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSMSBBackUp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                var selectedDevice = lbxAvailableDevices.SelectedItem?.ToString();
+
+                if (string.IsNullOrEmpty(selectedDevice))
+                {
+                    throw new Exception("Please select device");
+                }
+
+                var exportPath = string.Empty;
+
+                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    exportPath = folderBrowserDialog.SelectedPath;
+                }
+                else
+                {
+                    return;
+                }
+                //adb backup -f sms_backup.ab -noapk -noobb -all -system
+
+                var indexOfEndChar = selectedDevice.IndexOf('\t');
+                var deviceModel = selectedDevice.Substring(0, indexOfEndChar);
+
+                info.FileName = "C:\\platform-tools\\adb.exe";
+                info.Arguments = "-s " + deviceModel + " backup -f sms_backup.ab -noapk -noobb -all -system"; //> C:\\Users\\katar\\Downloads\\fff.txt"; //+ exportPath + "\\ff.txt";
+                process.StartInfo = info;
+
+                process.Start();
+
+                txtBoxOutput.Text = string.Empty;
+                txtBoxOutput.Text += process.StandardOutput.ReadToEnd();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

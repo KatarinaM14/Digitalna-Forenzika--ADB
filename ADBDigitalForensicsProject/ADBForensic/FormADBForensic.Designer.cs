@@ -50,6 +50,10 @@ namespace ADBForensic
             this.numHeightSize = new System.Windows.Forms.NumericUpDown();
             this.numWidthSize = new System.Windows.Forms.NumericUpDown();
             this.lblVideoSize = new System.Windows.Forms.Label();
+            this.btnInstalledServicesInfo = new System.Windows.Forms.Button();
+            this.btnBloothothDevicesInfo = new System.Windows.Forms.Button();
+            this.btnSMS = new System.Windows.Forms.Button();
+            this.btnSMSBBackUp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numMaxLength)).BeginInit();
             this.gBoxScreenrecord.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHeightSize)).BeginInit();
@@ -298,11 +302,55 @@ namespace ADBForensic
             this.lblVideoSize.Text = "Video\r\nsize";
             this.lblVideoSize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnInstalledServicesInfo
+            // 
+            this.btnInstalledServicesInfo.Location = new System.Drawing.Point(697, 76);
+            this.btnInstalledServicesInfo.Name = "btnInstalledServicesInfo";
+            this.btnInstalledServicesInfo.Size = new System.Drawing.Size(122, 23);
+            this.btnInstalledServicesInfo.TabIndex = 17;
+            this.btnInstalledServicesInfo.Text = "Installed services info";
+            this.btnInstalledServicesInfo.UseVisualStyleBackColor = true;
+            this.btnInstalledServicesInfo.Click += new System.EventHandler(this.btnInstalledServicesInfo_Click);
+            // 
+            // btnBloothothDevicesInfo
+            // 
+            this.btnBloothothDevicesInfo.Location = new System.Drawing.Point(651, 118);
+            this.btnBloothothDevicesInfo.Name = "btnBloothothDevicesInfo";
+            this.btnBloothothDevicesInfo.Size = new System.Drawing.Size(138, 23);
+            this.btnBloothothDevicesInfo.TabIndex = 18;
+            this.btnBloothothDevicesInfo.Text = "Bloothoth devices info";
+            this.btnBloothothDevicesInfo.UseVisualStyleBackColor = true;
+            this.btnBloothothDevicesInfo.Click += new System.EventHandler(this.btnBloothothDevicesInfo_Click);
+            // 
+            // btnSMS
+            // 
+            this.btnSMS.Location = new System.Drawing.Point(651, 160);
+            this.btnSMS.Name = "btnSMS";
+            this.btnSMS.Size = new System.Drawing.Size(121, 23);
+            this.btnSMS.TabIndex = 19;
+            this.btnSMS.Text = "SMS";
+            this.btnSMS.UseVisualStyleBackColor = true;
+            this.btnSMS.Click += new System.EventHandler(this.btnSMS_Click);
+            // 
+            // btnSMSBBackUp
+            // 
+            this.btnSMSBBackUp.Location = new System.Drawing.Point(631, 233);
+            this.btnSMSBBackUp.Name = "btnSMSBBackUp";
+            this.btnSMSBBackUp.Size = new System.Drawing.Size(130, 23);
+            this.btnSMSBBackUp.TabIndex = 20;
+            this.btnSMSBBackUp.Text = "SMS BackUp";
+            this.btnSMSBBackUp.UseVisualStyleBackColor = true;
+            this.btnSMSBBackUp.Click += new System.EventHandler(this.btnSMSBBackUp_Click);
+            // 
             // FormADBForensic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 453);
+            this.ClientSize = new System.Drawing.Size(878, 453);
+            this.Controls.Add(this.btnSMSBBackUp);
+            this.Controls.Add(this.btnSMS);
+            this.Controls.Add(this.btnBloothothDevicesInfo);
+            this.Controls.Add(this.btnInstalledServicesInfo);
             this.Controls.Add(this.gBoxScreenrecord);
             this.Controls.Add(this.btnShowDeviceInfo);
             this.Controls.Add(this.btnExportSDCard);
@@ -353,6 +401,10 @@ namespace ADBForensic
         private System.Windows.Forms.NumericUpDown numHeightSize;
         private System.Windows.Forms.NumericUpDown numWidthSize;
         private System.Windows.Forms.Label lblVideoSize;
+        private System.Windows.Forms.Button btnInstalledServicesInfo;
+        private System.Windows.Forms.Button btnBloothothDevicesInfo;
+        private System.Windows.Forms.Button btnSMS;
+        private System.Windows.Forms.Button btnSMSBBackUp;
     }
 }
 
