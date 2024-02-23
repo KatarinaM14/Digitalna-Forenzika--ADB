@@ -47,7 +47,7 @@ namespace ADBForensic
 
                 if (listOfDevices.Count < 2)
                 {
-                    throw new Exception("Devices not found");
+                    throw new Exception("Devices not found.");
                 }
 
                 listOfDevices.RemoveAt(0);
@@ -69,7 +69,7 @@ namespace ADBForensic
 
                 if (string.IsNullOrEmpty(selectedDevice))
                 {
-                    throw new Exception("Please select device");
+                    throw new Exception("Device is not selected.");
                 }
 
                 var indexOfEndChar = selectedDevice.IndexOf('\t');
@@ -122,7 +122,7 @@ namespace ADBForensic
 
                 if (string.IsNullOrEmpty(selectedDevice))
                 {
-                    throw new Exception("Please select device");
+                    throw new Exception("Device is not selected.");
                 }
 
                 var exportPath = string.Empty;
@@ -164,7 +164,7 @@ namespace ADBForensic
 
                 if (string.IsNullOrEmpty(selectedDevice))
                 {
-                    throw new Exception("Please select device");
+                    throw new Exception("Device is not selected.");
                 }
 
                 var exportPath = string.Empty;
@@ -206,7 +206,7 @@ namespace ADBForensic
 
                 if (string.IsNullOrEmpty(selectedDevice))
                 {
-                    throw new Exception("Please select device");
+                    throw new Exception("Device is not selected.");
                 }
 
                 var exportPath = string.Empty;
@@ -259,7 +259,7 @@ namespace ADBForensic
 
                 if (string.IsNullOrEmpty(selectedDevice))
                 {
-                    throw new Exception("Please select device");
+                    throw new Exception("Device is not selected.");
                 }
 
                 var exportPath = string.Empty;
@@ -288,9 +288,8 @@ namespace ADBForensic
 
                 process.StartInfo = info;
 
-                // Start recording
                 btnScreenrecord.Text = "Recording";
-                btnScreenrecord.BackColor = Color.Red;
+                btnScreenrecord.BackColor = Color.BlueViolet;
                 btnScreenrecord.Enabled = false;
                 numMaxLength.Enabled = false;
                 numHeightSize.Enabled = false;
@@ -481,7 +480,7 @@ namespace ADBForensic
 
             if (string.IsNullOrEmpty(selectedDevice))
             {
-                throw new Exception("Please select device");
+                throw new Exception("Device is not selected.");
             }
 
             var exportPath = string.Empty;
@@ -514,7 +513,7 @@ namespace ADBForensic
 
             if (string.IsNullOrEmpty(selectedDevice))
             {
-                throw new Exception("Please select device");
+                throw new Exception("Device is not selected.");
             }
 
             var exportPath = string.Empty;
@@ -550,7 +549,7 @@ namespace ADBForensic
 
                 if (string.IsNullOrEmpty(selectedDevice))
                 {
-                    throw new Exception("Please select device");
+                    throw new Exception("Device is not selected.");
                 }
 
                 var exportPath = string.Empty;
@@ -592,7 +591,7 @@ namespace ADBForensic
 
                 if (string.IsNullOrEmpty(selectedDevice))
                 {
-                    throw new Exception("Please select device");
+                    throw new Exception("Device is not selected.");
                 }
 
                 var exportPath = string.Empty;
