@@ -188,7 +188,7 @@ namespace ADBForensic
             this.numMaxLength.Size = new System.Drawing.Size(80, 20);
             this.numMaxLength.TabIndex = 13;
             this.numMaxLength.Value = new decimal(new int[] {
-            10,
+            5,
             0,
             0,
             0});
